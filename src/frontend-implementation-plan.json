@@ -1,27 +1,44 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Replace About Our Practice placeholder image with uploaded photo",
+  "title": "Professional light-blue hero background refresh (static asset + refined overlay)",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Swap the About Our Practice section profile image to the provided uploaded square photo while preserving the current square layout and styling.",
+      "id": "REQ-14",
+      "summary": "Refine the Hero/intro background treatment to better match the light-blue theme and improve professionalism while preserving existing hero content/layout and CTA scroll behaviors.",
       "acceptanceCriteria": [
-        "The About section no longer displays /assets/generated/ca-profile-placeholder.dim_800x800.png.",
-        "The About section image displays the uploaded photo from a static asset path under frontend/public/assets/generated.",
-        "The image remains square (aspect-square), object-cover, with the current rounded border, shadow, and border styling preserved.",
-        "All user-facing text remains in English."
+        "Hero section background appearance is consistent with the site’s light-blue theme (no clashing tones) in both light and dark modes.",
+        "Hero headline, subheadline, and buttons maintain strong readability/contrast over the background at common viewport sizes.",
+        "No changes to hero CTA actions: “Schedule Consultation” still scrolls to the Contact section and “View Services” still scrolls to the Services section.",
+        "No changes to the overall section order or navigation behavior in the page."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/ca-about-photo.dim_800x800.jpg",
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Improve the hero background treatment with a more formal light-blue aligned overlay/gradient (including light and dark mode variants) layered above the background image to ensure consistent contrast/readability; keep existing hero content structure and preserve current CTA click-to-scroll behavior. Continue using the shadcn-ui Button component for CTAs (Verify the component's usage instructions before implementing)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Replace the current hero background image with a new subtle, corporate-style generated image and wire it as a static asset in the Hero section with an appropriate overlay.",
+      "acceptanceCriteria": [
+        "A new generated background image is added under frontend/public/assets/generated and is used by the Hero section instead of the current image.",
+        "The new background image is visually subtle (not busy) and supports a formal/professional Chartered Accountant look.",
+        "The background image is responsive (covers the hero area without distortion) and does not introduce visible banding/artifacts behind overlay/gradient.",
+        "The previous hero image is no longer referenced by the Hero section component."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png",
           "operation": "create",
-          "description": "Add the required cropped square portrait photo asset (ca-about-photo.dim_800x800.jpg) for the About section image."
+          "description": "Add the new generated hero background image asset as specified: frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png."
         },
         {
-          "path": "frontend/src/components/sections/AboutSection.tsx",
+          "path": "frontend/src/components/sections/HeroSection.tsx",
           "operation": "modify",
-          "description": "Update only the specific About-section <img> (the profile image within the aspect-square container) to use src \"/assets/generated/ca-about-photo.dim_800x800.jpg\" instead of the placeholder, keeping existing className styling (object-cover) and preserving the surrounding aspect-square/rounded/border/shadow layout; do not modify other sections or text."
+          "description": "Update the Hero section to reference frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png instead of the previous image, ensure the background uses responsive cover behavior, and tune overlay opacity/gradient so the image remains subtle and the text stays readable in both light and dark modes. Ensure the old asset path frontend/public/assets/generated/ca-hero.dim_1600x900.png is no longer referenced. (Verify the component's usage instructions before implementing)."
         }
       ]
     }

@@ -1,44 +1,64 @@
 {
   "kind": "build_request",
-  "title": "Replace About Our Practice image with the uploaded photo",
+  "title": "Update hero/intro background to match light-blue theme and look more professional",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Update the image in the “About Our Practice” section (the <img> at XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) to use the user-uploaded photo instead of the current placeholder image, while keeping the existing aspect-square layout, rounded corners, border, and shadow styling.",
+      "id": "REQ-14",
+      "text": "Update the homepage Hero/intro section background so it visually syncs with the site’s light-blue theme and looks more formal/professional by improving the background treatment (e.g., refined overlay/gradient, opacity, and contrast) while keeping the existing hero content, layout structure, and CTA button behavior intact.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "recent-user-1"
+          "msg-1"
         ],
         "quotes": [
-          "moreover add up the photo as above provided in the about our practise section",
-          "yes proceed"
+          "the background of the first page , intro page doesnt sync , ammend it a bit and choose a better background"
         ]
       },
       "acceptanceCriteria": [
-        "The About section no longer displays /assets/generated/ca-profile-placeholder.dim_800x800.png.",
-        "The About section image displays the uploaded photo from a static asset path under frontend/public/assets/generated.",
-        "The image remains square (aspect-square), object-cover, with the current rounded border, shadow, and border styling preserved.",
-        "All user-facing text remains in English."
+        "Hero section background appearance is consistent with the site’s light-blue theme (no clashing tones) in both light and dark modes.",
+        "Hero headline, subheadline, and buttons maintain strong readability/contrast over the background at common viewport sizes.",
+        "No changes to hero CTA actions: “Schedule Consultation” still scrolls to the Contact section and “View Services” still scrolls to the Services section.",
+        "No changes to the overall section order or navigation behavior in the page."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Replace the current hero background image with a more professional, subtle, corporate-style background image and wire it into the Hero section as a static asset (served from frontend/public/assets/generated) with an appropriate overlay so it does not overpower the text.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-2"
+        ],
+        "quotes": [
+          "ammend it a bit and choose a better background",
+          "do it as you feel the best , i dont have much idea , it just me very professional"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new generated background image is added under frontend/public/assets/generated and is used by the Hero section instead of the current image.",
+        "The new background image is visually subtle (not busy) and supports a formal/professional Chartered Accountant look.",
+        "The background image is responsive (covers the hero area without distortion) and does not introduce visible banding/artifacts behind overlay/gradient.",
+        "The previous hero image is no longer referenced by the Hero section component."
       ]
     }
   ],
   "constraints": [
-    "Apply changes only to the selected About-section image element referenced by the provided XPath; do not modify other sections in this change set.",
-    "Do not edit any files under frontend/src/components/ui or any frontend immutablePaths listed in SYSTEM_CONTEXT."
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Do not add external services or backend dependencies; keep this change purely frontend/static-asset based."
   ],
   "nonGoals": [
-    "Do not change Hero/front-page background styling in this build request.",
-    "Do not add any backend logic or persistence.",
-    "Do not redesign the About section layout or copy beyond updating the selected image."
+    "Do not change site copy beyond what is required to improve hero background legibility.",
+    "Do not add new sections or alter the existing page structure (Hero, About, Services, Highlights, Contact).",
+    "Do not implement any backend functionality in Motoko for this request."
   ],
   "imageRequirements": {
     "required": [
-      "Cropped square portrait photo with neutral color balance and subtle contrast (ca-about-photo.dim_800x800.jpg)"
+      "Subtle abstract corporate background with soft light-blue/blue-gray tones, minimal shapes, gentle gradient, no text (ca-hero-bg-professional.dim_1600x900.png)"
     ],
     "edits": [
-      "Replace the About section placeholder image (ca-profile-placeholder.dim_800x800.png > ca-about-photo.dim_800x800.jpg)"
+      "Replace current hero background image with a more subtle professional variant (ca-hero.dim_1600x900.png > ca-hero-bg-professional.dim_1600x900.png)"
     ]
   },
   "userProfileUpdate": {

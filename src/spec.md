@@ -1,10 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the “About Our Practice” section placeholder image with the user-uploaded photo while preserving the current square layout and styling.
+**Goal:** Make the homepage Hero/intro background match the site’s light-blue theme and feel more formal/professional, while keeping all existing hero content, layout, and CTA behavior unchanged.
 
 **Planned changes:**
-- Add the user-uploaded photo as a static asset under `frontend/public/assets/generated` (cropped to a square).
-- Update only the referenced “About Our Practice” `<img>` element to point to the new asset path, keeping existing `aspect-square`, `object-cover`, rounded corners, border, and shadow styling unchanged.
+- Replace the current Hero background image with a new, subtle corporate-style light-blue/blue-gray image served as a static asset.
+- Add/refine a professional overlay/gradient treatment to ensure strong text/button readability across common viewport sizes and in both light and dark modes.
+- Ensure the new background image covers responsively without distortion and remove any references to the previous hero image in the Hero component.
 
-**User-visible outcome:** The “About Our Practice” section displays the uploaded photo instead of the placeholder image, with the same square, rounded, bordered, shadowed presentation.
+**User-visible outcome:** The homepage Hero/intro section looks more polished and visually consistent with the light-blue theme, with improved readability, and the “Schedule Consultation” and “View Services” buttons behave exactly as before.

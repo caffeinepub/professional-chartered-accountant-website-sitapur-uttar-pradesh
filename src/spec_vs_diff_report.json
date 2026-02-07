@@ -1,23 +1,33 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T06:53:42.741Z",
-  "summary": "REQ-1 appears implemented by updating the About section <img> to point to /assets/generated/ca-about-photo.dim_800x800.jpg while preserving a square container and object-cover styling. However, the change set also introduces references to updating the Hero/front-page background in project metadata/summaries, which was explicitly a non-goal.",
-  "missing_requirements": [],
-  "hallucinated_features": [
+  "generatedAt": "2026-02-06T07:45:06.783Z",
+  "summary": "HeroSection now references a new professional background image and adds multi-layer gradient/tint overlays intended to improve legibility and align with the light-blue theme, while keeping CTA scroll behavior intact. However, the required new static image asset itself is not shown as added in the diff, and a modified summary file claims multiple unrelated site-wide changes that are not evidenced by the provided code changes.",
+  "missing_requirements": [
     {
-      "description": "Hero/front-page background update (lighter/professional background image with gradient overlay) referenced as part of the change set, despite being a non-goal for this build request.",
-      "reason": "BuildRequest explicitly states: \"Do not change Hero/front-page background styling in this build request.\" The diff summary includes updated metadata describing a new hero background image/overlay.",
+      "id": "REQ-15",
+      "requirement": "Add the new generated background image under frontend/public/assets/generated (ca-hero-bg-professional.dim_1600x900.png) and use it in the Hero section.",
+      "reason": "HeroSection references /assets/generated/ca-hero-bg-professional.dim_1600x900.png, but the diff shows no added files, so the required static asset addition is not evidenced.",
       "evidence": [
-        "frontend-file-summaries.txt",
-        "project_state.json"
+        "frontend/src/components/sections/HeroSection.tsx (references /assets/generated/ca-hero-bg-professional.dim_1600x900.png)",
+        "file-diff summary: Added files: none"
       ]
     }
   ],
-  "confidence": 0.72,
+  "hallucinated_features": [
+    {
+      "description": "Claims of changes to multiple other frontend files/sections (App, Navbar, Footer, About/Services/Highlights/Contact sections, ContactForm, index.css palette updates, tailwind config, index.html SEO) that are not evidenced by the diff.",
+      "reason": "The diff only shows modifications to HeroSection.tsx, frontend-file-summaries.txt, and project_state.json. The described changes appear only as statements in frontend-file-summaries.txt without corresponding code diffs for those files.",
+      "evidence": [
+        "frontend-file-summaries.txt (describes updates to many files)",
+        "file-diff summary: Modified files list only includes HeroSection.tsx, frontend-file-summaries.txt, project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.78,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/components/sections/AboutSection.tsx",
+    "frontend/src/components/sections/HeroSection.tsx",
     "project_state.json"
   ]
 }

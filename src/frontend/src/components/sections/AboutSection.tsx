@@ -17,7 +17,7 @@ export default function AboutSection() {
             <div className="relative max-w-md mx-auto">
               <div className="aspect-square rounded-lg overflow-hidden shadow-lg border border-border">
                 <img
-                  src="/assets/generated/ca-about-photo.dim_800x800.jpg"
+                  src="/assets/generated/ca-profile-placeholder.dim_800x800.png"
                   alt="Professional chartered accountant"
                   className="w-full h-full object-cover"
                 />
