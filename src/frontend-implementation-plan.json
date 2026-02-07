@@ -1,0 +1,29 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Replace About Our Practice placeholder image with uploaded photo",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Swap the About Our Practice section profile image to the provided uploaded square photo while preserving the current square layout and styling.",
+      "acceptanceCriteria": [
+        "The About section no longer displays /assets/generated/ca-profile-placeholder.dim_800x800.png.",
+        "The About section image displays the uploaded photo from a static asset path under frontend/public/assets/generated.",
+        "The image remains square (aspect-square), object-cover, with the current rounded border, shadow, and border styling preserved.",
+        "All user-facing text remains in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/ca-about-photo.dim_800x800.jpg",
+          "operation": "create",
+          "description": "Add the required cropped square portrait photo asset (ca-about-photo.dim_800x800.jpg) for the About section image."
+        },
+        {
+          "path": "frontend/src/components/sections/AboutSection.tsx",
+          "operation": "modify",
+          "description": "Update only the specific About-section <img> (the profile image within the aspect-square container) to use src \"/assets/generated/ca-about-photo.dim_800x800.jpg\" instead of the placeholder, keeping existing className styling (object-cover) and preserving the surrounding aspect-square/rounded/border/shadow layout; do not modify other sections or text."
+        }
+      ]
+    }
+  ]
+}

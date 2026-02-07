@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-image-in-the-about-our-practice-section-the-img-at-xpath-html-1-body-1-div-1-div-1-main-1-section-2-div-1-div-1-div-1-div-1-div-1-img-1-to-use-the-user-uploaded-photo-instead-of-the-current-placeholder-image-while-keeping-the-existing-aspect-square-layout-rounded-corners-border-and-shadow-styling",
+      "featureTitle": "Update the image in the “About Our Practice” section (the <img> at XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) to use the user-uploaded photo instead of the current placeholder image, while keeping the existing aspect-square layout, rounded corners, border, and shadow styling.",
+      "files": [
+        "frontend/src/components/sections/AboutSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

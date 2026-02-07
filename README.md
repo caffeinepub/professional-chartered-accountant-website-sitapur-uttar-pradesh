@@ -1,2 +1,3 @@
-# professional-chartered-accountant-website-sitapur-uttar-pradesh
-Exported from Caffeine project: Replace About Our Practice image with the uploaded photo
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

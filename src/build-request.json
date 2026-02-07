@@ -1,0 +1,54 @@
+{
+  "kind": "build_request",
+  "title": "Replace About Our Practice image with the uploaded photo",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the image in the “About Our Practice” section (the <img> at XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) to use the user-uploaded photo instead of the current placeholder image, while keeping the existing aspect-square layout, rounded corners, border, and shadow styling.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-user-1"
+        ],
+        "quotes": [
+          "moreover add up the photo as above provided in the about our practise section",
+          "yes proceed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The About section no longer displays /assets/generated/ca-profile-placeholder.dim_800x800.png.",
+        "The About section image displays the uploaded photo from a static asset path under frontend/public/assets/generated.",
+        "The image remains square (aspect-square), object-cover, with the current rounded border, shadow, and border styling preserved.",
+        "All user-facing text remains in English."
+      ]
+    }
+  ],
+  "constraints": [
+    "Apply changes only to the selected About-section image element referenced by the provided XPath; do not modify other sections in this change set.",
+    "Do not edit any files under frontend/src/components/ui or any frontend immutablePaths listed in SYSTEM_CONTEXT."
+  ],
+  "nonGoals": [
+    "Do not change Hero/front-page background styling in this build request.",
+    "Do not add any backend logic or persistence.",
+    "Do not redesign the About section layout or copy beyond updating the selected image."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Cropped square portrait photo with neutral color balance and subtle contrast (ca-about-photo.dim_800x800.jpg)"
+    ],
+    "edits": [
+      "Replace the About section placeholder image (ca-profile-placeholder.dim_800x800.png > ca-about-photo.dim_800x800.jpg)"
+    ]
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

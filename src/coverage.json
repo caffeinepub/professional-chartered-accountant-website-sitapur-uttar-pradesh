@@ -1,0 +1,41 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T06:53:42.743Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Update the image in the “About Our Practice” section (the <img> at XPath /html[1]/body[1]/div[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/img[1]) to use the user-uploaded photo instead of the current placeholder image, while keeping the existing aspect-square layout, rounded corners, border, and shadow styling.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/ca-about-photo.dim_800x800.jpg",
+          "frontend/src/components/sections/AboutSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/ca-about-photo.dim_800x800.jpg",
+          "frontend/src/components/sections/AboutSection.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/ca-about-photo.dim_800x800.jpg",
+    "frontend/src/components/sections/AboutSection.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

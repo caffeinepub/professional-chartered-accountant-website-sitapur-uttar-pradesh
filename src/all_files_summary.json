@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Minimal Motoko actor with no functions.",
+  "feature_evidence.json": "Feature evidence report describing an update to AboutSection.tsx image handling.",
+  "frontend-file-summaries.txt": "Text file containing high-level summaries of all frontend components.",
+  "frontend/index.css": "Tailwind base layer defining OKLCH color variables and theme styles for light and dark modes.",
+  "frontend/index.html": "HTML entry point with SEO metadata, Open Graph tags, and root mounting point.",
+  "frontend/src/App.tsx": "Main React layout composing navbar, content sections, and footer.",
+  "frontend/src/components/ContactForm.tsx": "Interactive contact form with validation, submission simulation, and success state handling.",
+  "frontend/src/components/MarketingFooter.tsx": "Footer with brand info, quick links, services list, contact details, and social links.",
+  "frontend/src/components/MarketingNavbar.tsx": "Responsive navbar with scroll behavior, section navigation, and mobile menu.",
+  "frontend/src/components/sections/AboutSection.tsx": "About section with profile image, practice description, and qualifications list.",
+  "frontend/src/components/sections/ContactSection.tsx": "Renders a contact section with location, phone, email, response time, confidentiality notice, and an embedded contact form.",
+  "frontend/src/components/sections/HeroSection.tsx": "Displays the hero banner with background images, marketing text, and buttons that scroll to contact and services sections.",
+  "frontend/src/components/sections/HighlightsSection.tsx": "Shows four highlight cards describing key strengths like compliance, timeliness, confidentiality, and professionalism.",
+  "frontend/src/components/sections/ServicesSection.tsx": "Lists multiple CA service offerings using cards, including taxation, GST, accounting, regulatory compliance, and audits.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages a backend actor based on Internet Identity, refetching dependent queries when identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements an Internet Identity authentication provider and hook handling login, stored identities, status flags, and errors.",
+  "frontend/src/hooks/useQueries.ts": "Empty stub file indicating no backend queries are needed for the marketing site.",
+  "frontend/src/index.css": "Defines Tailwind base styles and custom CSS variables for light and dark themes with a professional blue palette.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with query and Internet Identity providers before rendering App.",
+  "frontend/tailwind.config.js": "Tailwind CSS config enabling dark mode, custom fonts, colors, animations, and plugin integrations for typography, container queries, and animations.",
+  "project_state.json": "Project state metadata describing UI update tasks, required images, and pending feature requests for updating the landing page and About section photo."
+}
