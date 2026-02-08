@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-06T07:45:06.786Z",
+  "generatedAt": "2026-02-08T10:11:33.485Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,27 +11,28 @@
     "implemented": 2,
     "items": [
       {
-        "id": "REQ-14",
-        "summary": "Update the homepage Hero/intro section background so it visually syncs with the site’s light-blue theme and looks more formal/professional by improving the background treatment (e.g., refined overlay/gradient, opacity, and contrast) while keeping the existing hero content, layout structure, and CTA button behavior intact.",
+        "id": "REQ-1",
+        "summary": "Remove all decorative background styling from the front page (Hero section) so it displays on a plain background with no pattern, no decorative overlays, and no background image; keep the existing hero text, buttons, and scroll-to-section behavior unchanged.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/HeroSection.tsx"
+          "frontend/src/components/sections/HeroSection.tsx",
+          "frontend/src/index.css"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/HeroSection.tsx"
+          "frontend/src/components/sections/HeroSection.tsx",
+          "frontend/src/index.css"
         ]
       },
       {
-        "id": "REQ-15",
-        "summary": "Replace the current hero background image with a more professional, subtle, corporate-style background image and wire it into the Hero section as a static asset (served from frontend/public/assets/generated) with an appropriate overlay so it does not overpower the text.",
+        "id": "REQ-2",
+        "summary": "Replace the existing image in the “About Our Practice” section with the uploaded photo, and ensure the image renders correctly in the existing square frame without breaking layout.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png",
-          "frontend/src/components/sections/HeroSection.tsx"
+          "frontend/public/assets/IMG-20211208-WA0020~2-2.jpg",
+          "frontend/src/components/sections/AboutSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png",
-          "frontend/src/components/sections/HeroSection.tsx"
+          "frontend/src/components/sections/AboutSection.tsx"
         ]
       }
     ]
@@ -41,9 +42,9 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png",
-    "frontend/public/assets/generated/ca-hero.dim_1600x900.png",
+    "frontend/src/components/sections/AboutSection.tsx",
     "frontend/src/components/sections/HeroSection.tsx",
+    "frontend/src/index.css",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

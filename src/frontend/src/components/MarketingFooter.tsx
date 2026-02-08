@@ -17,7 +17,7 @@ export default function MarketingFooter() {
   ];
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-card/50 border-t border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
@@ -99,7 +99,7 @@ export default function MarketingFooter() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
+        <div className="mt-12 pt-8 border-t border-border/50">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-sm text-muted-foreground text-center sm:text-left">
               © 2026. Built with love using{' '}

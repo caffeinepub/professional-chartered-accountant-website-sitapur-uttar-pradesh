@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-background">
+    <section id="contact" className="py-24 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -73,7 +73,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-muted/50 border border-border">
+            <div className="p-5 rounded-lg bg-muted/30 border border-border/50">
               <p className="text-xs text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">Confidentiality Notice:</strong> All information shared through this contact form is treated with strict confidentiality and used solely for responding to your inquiry.
               </p>

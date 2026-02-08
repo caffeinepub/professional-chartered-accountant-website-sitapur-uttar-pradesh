@@ -55,16 +55,10 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setIsSubmitted(true);
     setIsSubmitting(false);
-
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setFormData({ name: '', contact: '', message: '' });
-      setIsSubmitted(false);
-    }, 5000);
+    setIsSubmitted(true);
   };
 
   const handleChange = (
@@ -72,7 +66,7 @@ export default function ContactForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
+    // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -80,81 +74,99 @@ export default function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="bg-primary/5 border-2 border-primary/20 rounded-xl p-8 text-center space-y-4">
+      <div className="bg-card/50 border border-border/50 rounded-lg p-8 text-center space-y-4">
         <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
           <CheckCircle2 className="h-8 w-8 text-primary" />
         </div>
-        <h3 className="text-2xl font-semibold text-foreground">
-          Thank You!
-        </h3>
-        <p className="text-muted-foreground leading-relaxed">
-          Your message has been received successfully. We will get back to you within 24 hours on business days.
-        </p>
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold text-foreground">
+            Message Received
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Thank you for contacting us. We will review your inquiry and respond within 24 hours on business days.
+          </p>
+        </div>
+        <Button
+          onClick={() => {
+            setIsSubmitted(false);
+            setFormData({ name: '', contact: '', message: '' });
+          }}
+          variant="outline"
+          className="mt-4"
+        >
+          Send Another Message
+        </Button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6 bg-card/50 border border-border/50 rounded-lg p-6 sm:p-8">
       <div className="space-y-2">
-        <Label htmlFor="name">Full Name *</Label>
+        <Label htmlFor="name" className="text-sm font-medium">
+          Full Name <span className="text-destructive">*</span>
+        </Label>
         <Input
           id="name"
           name="name"
           type="text"
-          placeholder="Enter your full name"
           value={formData.name}
           onChange={handleChange}
-          className={errors.name ? 'border-destructive' : ''}
+          placeholder="Enter your full name"
+          className={`${errors.name ? 'border-destructive focus-visible:ring-destructive' : ''}`}
         />
         {errors.name && (
-          <p className="text-sm text-destructive">{errors.name}</p>
+          <p className="text-xs text-destructive">{errors.name}</p>
         )}
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="contact">Email or Phone Number *</Label>
+        <Label htmlFor="contact" className="text-sm font-medium">
+          Email or Phone <span className="text-destructive">*</span>
+        </Label>
         <Input
           id="contact"
           name="contact"
           type="text"
-          placeholder="Enter your email or phone number"
           value={formData.contact}
           onChange={handleChange}
-          className={errors.contact ? 'border-destructive' : ''}
+          placeholder="Enter your email or phone number"
+          className={`${errors.contact ? 'border-destructive focus-visible:ring-destructive' : ''}`}
         />
         {errors.contact && (
-          <p className="text-sm text-destructive">{errors.contact}</p>
+          <p className="text-xs text-destructive">{errors.contact}</p>
         )}
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message">Message *</Label>
+        <Label htmlFor="message" className="text-sm font-medium">
+          Message <span className="text-destructive">*</span>
+        </Label>
         <Textarea
           id="message"
           name="message"
-          placeholder="Tell us about your requirements or questions..."
-          rows={6}
           value={formData.message}
           onChange={handleChange}
-          className={errors.message ? 'border-destructive' : ''}
+          placeholder="Describe your inquiry or requirements"
+          rows={5}
+          className={`resize-none ${errors.message ? 'border-destructive focus-visible:ring-destructive' : ''}`}
         />
         {errors.message && (
-          <p className="text-sm text-destructive">{errors.message}</p>
+          <p className="text-xs text-destructive">{errors.message}</p>
         )}
       </div>
 
       <Button
         type="submit"
-        size="lg"
-        className="w-full"
         disabled={isSubmitting}
+        className="w-full"
+        size="lg"
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
 
-      <p className="text-xs text-muted-foreground text-center">
-        * Required fields
+      <p className="text-xs text-muted-foreground text-center leading-relaxed">
+        By submitting this form, you agree to our confidentiality policy. We will only use your information to respond to your inquiry.
       </p>
     </form>
   );

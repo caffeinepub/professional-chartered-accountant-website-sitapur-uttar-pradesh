@@ -1,74 +1,61 @@
 {
   "kind": "build_request",
-  "title": "Update hero/intro background to match light-blue theme and look more professional",
+  "title": "Remove front-page hero background designs and replace About profile image with uploaded photo",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-14",
-      "text": "Update the homepage Hero/intro section background so it visually syncs with the site’s light-blue theme and looks more formal/professional by improving the background treatment (e.g., refined overlay/gradient, opacity, and contrast) while keeping the existing hero content, layout structure, and CTA button behavior intact.",
+      "id": "REQ-1",
+      "text": "Remove all decorative background styling from the front page (Hero section) so it displays on a plain background with no pattern, no decorative overlays, and no background image; keep the existing hero text, buttons, and scroll-to-section behavior unchanged.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-recent-1",
+          "msg-recent-2"
         ],
         "quotes": [
-          "the background of the first page , intro page doesnt sync , ammend it a bit and choose a better background"
+          "no remove the background of front page , no need of designs",
+          "yes do it"
         ]
       },
       "acceptanceCriteria": [
-        "Hero section background appearance is consistent with the site’s light-blue theme (no clashing tones) in both light and dark modes.",
-        "Hero headline, subheadline, and buttons maintain strong readability/contrast over the background at common viewport sizes.",
-        "No changes to hero CTA actions: “Schedule Consultation” still scrolls to the Contact section and “View Services” still scrolls to the Services section.",
-        "No changes to the overall section order or navigation behavior in the page."
+        "On the Hero section, there is no patterned background (the `.hero-pattern` visual effect is not visible/used).",
+        "On the Hero section, there is no background image rendered behind the hero content.",
+        "Hero headline, subtext, CTA buttons, and smooth scroll behavior to Services/Contact still work as before.",
+        "No new decorative/background design elements are introduced on the front page."
       ]
     },
     {
-      "id": "REQ-15",
-      "text": "Replace the current hero background image with a more professional, subtle, corporate-style background image and wire it into the Hero section as a static asset (served from frontend/public/assets/generated) with an appropriate overlay so it does not overpower the text.",
+      "id": "REQ-2",
+      "text": "Replace the existing image in the “About Our Practice” section with the uploaded photo, and ensure the image renders correctly in the existing square frame without breaking layout.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1",
-          "msg-2"
+          "msg-recent-3",
+          "msg-recent-4"
         ],
         "quotes": [
-          "ammend it a bit and choose a better background",
-          "do it as you feel the best , i dont have much idea , it just me very professional"
+          "yes existing image must be replaced",
+          "add this photo in place of chartered accountant proflie"
         ]
       },
       "acceptanceCriteria": [
-        "A new generated background image is added under frontend/public/assets/generated and is used by the Hero section instead of the current image.",
-        "The new background image is visually subtle (not busy) and supports a formal/professional Chartered Accountant look.",
-        "The background image is responsive (covers the hero area without distortion) and does not introduce visible banding/artifacts behind overlay/gradient.",
-        "The previous hero image is no longer referenced by the Hero section component."
+        "The About Our Practice section no longer uses `/assets/generated/ca-profile-placeholder.dim_800x800.png`.",
+        "One of the uploaded images (IMG-20211208-WA0020~2-2.jpg, IMG-20211208-WA0020~2-3.jpg, or IMG-20211208-WA0020~2-4.jpg) is added as a static asset and used as the About image source.",
+        "The About image remains square, cropped nicely (object-fit cover), and keeps the existing rounded/border/shadow styling.",
+        "No other sections’ content or layout are changed."
       ]
     }
   ],
   "constraints": [
-    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
-    "Do not add external services or backend dependencies; keep this change purely frontend/static-asset based."
+    "Frontend immutable paths must not be edited: `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useInternetIdentity.tsx`, `frontend/src/hooks/useActor.ts`, `frontend/src/main.tsx`, and anything under `frontend/src/components/ui`.",
+    "Keep the application as a single-page marketing layout; do not introduce new routes or backend dependencies."
   ],
   "nonGoals": [
-    "Do not change site copy beyond what is required to improve hero background legibility.",
-    "Do not add new sections or alter the existing page structure (Hero, About, Services, Highlights, Contact).",
-    "Do not implement any backend functionality in Motoko for this request."
+    "Adding new marketing sections, changing copy, or altering navigation structure beyond removing the hero background visuals.",
+    "Implementing backend storage or image uploads via the backend (images should be served as frontend static assets)."
   ],
   "imageRequirements": {
-    "required": [
-      "Subtle abstract corporate background with soft light-blue/blue-gray tones, minimal shapes, gentle gradient, no text (ca-hero-bg-professional.dim_1600x900.png)"
-    ],
-    "edits": [
-      "Replace current hero background image with a more subtle professional variant (ca-hero.dim_1600x900.png > ca-hero-bg-professional.dim_1600x900.png)"
-    ]
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
+    "required": [],
+    "edits": []
   }
 }

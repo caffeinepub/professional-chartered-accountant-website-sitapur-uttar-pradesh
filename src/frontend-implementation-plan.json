@@ -1,44 +1,49 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Professional light-blue hero background refresh (static asset + refined overlay)",
+  "title": "Simplify hero background and update About profile photo",
   "requirements": [
     {
-      "id": "REQ-14",
-      "summary": "Refine the Hero/intro background treatment to better match the light-blue theme and improve professionalism while preserving existing hero content/layout and CTA scroll behaviors.",
+      "id": "REQ-1",
+      "summary": "Remove hero decorative background pattern, overlays, and background image while preserving hero content and scroll behavior.",
       "acceptanceCriteria": [
-        "Hero section background appearance is consistent with the site’s light-blue theme (no clashing tones) in both light and dark modes.",
-        "Hero headline, subheadline, and buttons maintain strong readability/contrast over the background at common viewport sizes.",
-        "No changes to hero CTA actions: “Schedule Consultation” still scrolls to the Contact section and “View Services” still scrolls to the Services section.",
-        "No changes to the overall section order or navigation behavior in the page."
+        "On the Hero section, there is no patterned background (the `.hero-pattern` visual effect is not visible/used).",
+        "On the Hero section, there is no background image rendered behind the hero content.",
+        "Hero headline, subtext, CTA buttons, and smooth scroll behavior to Services/Contact still work as before.",
+        "No new decorative/background design elements are introduced on the front page."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/sections/HeroSection.tsx",
           "operation": "modify",
-          "description": "Improve the hero background treatment with a more formal light-blue aligned overlay/gradient (including light and dark mode variants) layered above the background image to ensure consistent contrast/readability; keep existing hero content structure and preserve current CTA click-to-scroll behavior. Continue using the shadcn-ui Button component for CTAs (Verify the component's usage instructions before implementing)."
+          "description": "Remove the hero background image element and any decorative overlay layers; remove usage of the `hero-pattern` class so the hero renders on a plain background while keeping all existing text, buttons, and scroll-to-section handlers unchanged."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Remove (or neutralize) the `.hero-pattern` styling definition in the global styles so the pattern effect is not present/used anywhere after hero cleanup."
         }
       ]
     },
     {
-      "id": "REQ-15",
-      "summary": "Replace the current hero background image with a new subtle, corporate-style generated image and wire it as a static asset in the Hero section with an appropriate overlay.",
+      "id": "REQ-2",
+      "summary": "Replace the About Our Practice profile image with an uploaded photo served as a static asset, keeping the existing square framing and styling.",
       "acceptanceCriteria": [
-        "A new generated background image is added under frontend/public/assets/generated and is used by the Hero section instead of the current image.",
-        "The new background image is visually subtle (not busy) and supports a formal/professional Chartered Accountant look.",
-        "The background image is responsive (covers the hero area without distortion) and does not introduce visible banding/artifacts behind overlay/gradient.",
-        "The previous hero image is no longer referenced by the Hero section component."
+        "The About Our Practice section no longer uses `/assets/generated/ca-profile-placeholder.dim_800x800.png`.",
+        "One of the uploaded images (IMG-20211208-WA0020~2-2.jpg, IMG-20211208-WA0020~2-3.jpg, or IMG-20211208-WA0020~2-4.jpg) is added as a static asset and used as the About image source.",
+        "The About image remains square, cropped nicely (object-fit cover), and keeps the existing rounded/border/shadow styling.",
+        "No other sections’ content or layout are changed."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png",
+          "path": "frontend/public/assets/IMG-20211208-WA0020~2-2.jpg",
           "operation": "create",
-          "description": "Add the new generated hero background image asset as specified: frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png."
+          "description": "Add the uploaded photo as a frontend static asset so it can be referenced by the About section image tag."
         },
         {
-          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "path": "frontend/src/components/sections/AboutSection.tsx",
           "operation": "modify",
-          "description": "Update the Hero section to reference frontend/public/assets/generated/ca-hero-bg-professional.dim_1600x900.png instead of the previous image, ensure the background uses responsive cover behavior, and tune overlay opacity/gradient so the image remains subtle and the text stays readable in both light and dark modes. Ensure the old asset path frontend/public/assets/generated/ca-hero.dim_1600x900.png is no longer referenced. (Verify the component's usage instructions before implementing)."
+          "description": "Update the About section image `src` to use `/assets/IMG-20211208-WA0020~2-2.jpg` instead of `/assets/generated/ca-profile-placeholder.dim_800x800.png`, preserving the existing square frame and `object-cover` styling to avoid layout changes."
         }
       ]
     }

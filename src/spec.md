@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Make the homepage Hero/intro background match the site’s light-blue theme and feel more formal/professional, while keeping all existing hero content, layout, and CTA behavior unchanged.
+**Goal:** Simplify the front-page Hero to a plain background and replace the About section profile image with the provided uploaded photo.
 
 **Planned changes:**
-- Replace the current Hero background image with a new, subtle corporate-style light-blue/blue-gray image served as a static asset.
-- Add/refine a professional overlay/gradient treatment to ensure strong text/button readability across common viewport sizes and in both light and dark modes.
-- Ensure the new background image covers responsively without distortion and remove any references to the previous hero image in the Hero component.
+- Remove all decorative/background visuals from the Hero section (no pattern effect, no overlays, no background image) while keeping the existing hero content and scroll-to-section behavior unchanged.
+- Add one of the uploaded photos as a frontend static asset and use it to replace the current “About Our Practice” image, preserving the existing square framing and styling.
 
-**User-visible outcome:** The homepage Hero/intro section looks more polished and visually consistent with the light-blue theme, with improved readability, and the “Schedule Consultation” and “View Services” buttons behave exactly as before.
+**User-visible outcome:** The homepage Hero displays on a clean plain background, and the “About Our Practice” section shows the uploaded profile photo in the same square styled frame as before.

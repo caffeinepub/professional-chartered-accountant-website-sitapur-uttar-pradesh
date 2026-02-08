@@ -9,15 +9,15 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 lg:py-32 bg-muted/20">
+    <section id="about" className="py-24 lg:py-32 bg-card/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
           {/* Image */}
           <div className="order-2 lg:order-1">
             <div className="relative max-w-md mx-auto">
-              <div className="aspect-square rounded-lg overflow-hidden shadow-lg border border-border">
+              <div className="aspect-square rounded-lg overflow-hidden shadow-soft border border-border/50">
                 <img
-                  src="/assets/generated/ca-profile-placeholder.dim_800x800.png"
+                  src="/assets/IMG-20211208-WA0020~2-2.jpg"
                   alt="Professional chartered accountant"
                   className="w-full h-full object-cover"
                 />

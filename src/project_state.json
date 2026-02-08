@@ -1,130 +1,24 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 11,
-  "summary": "Build a professional website for a chartered accountant based in Sitapur, Uttar Pradesh, highlighting expertise in taxation, GST, accounting, and regulatory compliance.",
-  "architectural_notes": [
-    "Visual theme update: front page must not be green; use a light blue shade for primary accents/backgrounds (overrides prior non-blue constraint).",
-    "Scope constraint: modify only the front page; keep other sections/pages unchanged.",
-    "Contact details (phone/email) should appear only in the Contact section (not in navbar/footer).",
-    "Services content change: combine Bank Audit + Concurrent Audit into one merged service item (not separate entries).",
-    "Front/intro (hero) background must visually sync with the light-blue theme and maintain a very professional, formal corporate look."
-  ],
-  "known_issues": [
-    "Current front page draft quality is unacceptable; needs a simpler, more formal professional redesign.",
-    "Front/intro page background currently does not sync with the site theme; needs a more professional background treatment."
-  ],
-  "isFixRequest": true,
-  "imageRequirements": "## Required Images\n- Subtle abstract corporate background with soft light-blue/blue-gray tones, minimal shapes, gentle gradient, no text (ca-hero-bg-professional.dim_1600x900.png)\n\n## Edit Images\n- Replace current hero background image with a more subtle professional variant (ca-hero.dim_1600x900.png > ca-hero-bg-professional.dim_1600x900.png)",
+  "projectStateVersion": 3,
+  "summary": "App/site updates: remove decorative background from front page; replace existing image in 'About Our Practice' section with an uploaded photo.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-create-a-professional-responsive-marketing-website-for-a-chartered-accountant-based-in-sitapur-uttar-pradesh-with-clear-sections-for-hero-intro-about-services-expertise-highlights-and-contact",
-      "title": "Create a professional, responsive marketing website for a Chartered Accountant based in Sitapur, Uttar Pradesh, with clear sections for: Hero/intro, About, Services, Expertise/Highlights, and Contact.",
+      "id": "feature-remove-all-decorative-background-styling-from-the-front-page-hero-section-so-it-displays-on-a-plain-background-with-no-pattern-no-decorative-overlays-and-no-background-image-keep-the-existing-hero-text-buttons-and-scroll-to-section-behavior-unchanged",
+      "title": "Remove all decorative background styling from the front page (Hero section) so it displays on a plain background with no pattern, no decorative overlays, and no background image; keep the existing hero text, buttons, and scroll-to-section behavior unchanged.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-write-polished-english-copy-throughout-the-site-suitable-for-a-professional-chartered-accountant-including-service-descriptions-for-taxation-gst-accounting-and-regulatory-compliances-using-a-formal-business-tone",
-      "title": "Write polished English copy throughout the site suitable for a professional Chartered Accountant, including service descriptions for Taxation, GST, Accounting, and Regulatory Compliances, using a formal business tone.",
+      "id": "feature-replace-the-existing-image-in-the-about-our-practice-section-with-the-uploaded-photo-and-ensure-the-image-renders-correctly-in-the-existing-square-frame-without-breaking-layout",
+      "title": "Replace the existing image in the “About Our Practice” section with the uploaded photo, and ensure the image renders correctly in the existing square frame without breaking layout.",
       "reqIds": [
         "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-implement-a-clear-navigation-experience-top-navbar-and-footer-that-allows-users-to-jump-to-sections-and-includes-a-prominent-call-to-action-e-g-schedule-a-consultation-or-contact",
-      "title": "Implement a clear navigation experience (top navbar and footer) that allows users to jump to sections and includes a prominent call-to-action (e.g., “Schedule a Consultation” or “Contact”).",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-use-a-coherent-professional-visual-theme-with-consistent-typography-spacing-and-component-styling-across-the-entire-site-do-not-use-a-blue-purple-theme",
-      "title": "Use a coherent, professional visual theme with consistent typography, spacing, and component styling across the entire site (do not use a blue/purple theme).",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-a-contact-section-with-a-simple-contact-form-name-email-phone-message-that-performs-client-side-validation-and-shows-a-success-state-without-requiring-external-services",
-      "title": "Add a Contact section with a simple contact form (name, email/phone, message) that performs client-side validation and shows a success state without requiring external services.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-add-basic-seo-and-social-metadata-page-title-description-open-graph-fields-reflecting-a-chartered-accountant-in-sitapur-uttar-pradesh-with-expertise-in-taxation-gst-accounting-and-regulatory-compliances",
-      "title": "Add basic SEO and social metadata (page title, description, Open Graph fields) reflecting a Chartered Accountant in Sitapur, Uttar Pradesh with expertise in Taxation, GST, Accounting, and Regulatory Compliances.",
-      "reqIds": [
-        "REQ-6"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-render-the-generated-image-assets-from-frontend-public-assets-generated-in-the-site-hero-visual-profile-placeholder-and-service-icons",
-      "title": "Render the generated image assets from frontend/public/assets/generated in the site (hero visual, profile placeholder, and service icons).",
-      "reqIds": [
-        "REQ-8"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-current-green-based-site-palette-with-a-light-blue-theme-no-green-hues-by-updating-the-global-css-color-variables-used-for-primary-accent-and-related-tokens-so-the-hero-front-page-and-all-components-inherit-the-new-light-blue-styling-consistently",
-      "title": "Replace the current green-based site palette with a light blue theme (no green hues) by updating the global CSS color variables used for `primary`, `accent`, and related tokens so the hero/front page and all components inherit the new light blue styling consistently.",
-      "reqIds": [
-        "REQ-9"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-redesign-the-front-page-layout-and-copy-to-be-simple-formal-and-professionally-structured-minimal-but-corporate-improving-overall-readability-and-visual-hierarchy-while-keeping-the-existing-site-sections-hero-about-services-highlights-contact-and-navigation-behavior-intact",
-      "title": "Redesign the front page layout and copy to be simple, formal, and professionally structured (minimal but corporate), improving overall readability and visual hierarchy while keeping the existing site sections (Hero, About, Services, Highlights, Contact) and navigation behavior intact.",
-      "reqIds": [
-        "REQ-10"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-existing-services-content-shown-on-the-front-page-to-include-expertise-in-bank-audits-and-concurrent-audits-within-the-existing-services-section-do-not-create-a-separate-new-section",
-      "title": "Update the existing Services content shown on the front page to include expertise in Bank Audits and Concurrent Audits within the existing Services section (do not create a separate new section).",
-      "reqIds": [
-        "REQ-11"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-contact-section-to-display-the-phone-number-91-7607105253-and-email-address-cakamalkishoreagarwal-gmail-com-in-the-contact-information-area-replacing-the-existing-placeholder-text-for-phone-and-email-and-ensure-these-details-appear-only-within-the-contact-section-not-in-the-navbar-footer-or-any-other-section",
-      "title": "Update the Contact section to display the phone number \"+91 7607105253\" and email address \"cakamalkishoreagarwal@gmail.com\" in the Contact Information area, replacing the existing placeholder text for Phone and Email, and ensure these details appear only within the Contact section (not in the navbar, footer, or any other section).",
-      "reqIds": [
-        "REQ-12"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-in-the-services-section-merge-the-existing-bank-audits-and-concurrent-audits-service-cards-into-a-single-service-entry-one-card-with-a-unified-title-and-description-that-covers-both-topics-and-remove-the-separate-standalone-concurrent-audits-entry",
-      "title": "In the Services section, merge the existing \"Bank Audits\" and \"Concurrent Audits\" service cards into a single service entry (one card) with a unified title and description that covers both topics, and remove the separate standalone \"Concurrent Audits\" entry.",
-      "reqIds": [
-        "REQ-13"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-homepage-hero-intro-section-background-so-it-visually-syncs-with-the-site-s-light-blue-theme-and-looks-more-formal-professional-by-improving-the-background-treatment-e-g-refined-overlay-gradient-opacity-and-contrast-while-keeping-the-existing-hero-content-layout-structure-and-cta-button-behavior-intact",
-      "title": "Update the homepage Hero/intro section background so it visually syncs with the site’s light-blue theme and looks more formal/professional by improving the background treatment (e.g., refined overlay/gradient, opacity, and contrast) while keeping the existing hero content, layout structure, and CTA button behavior intact.",
-      "reqIds": [
-        "REQ-14"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-replace-the-current-hero-background-image-with-a-more-professional-subtle-corporate-style-background-image-and-wire-it-into-the-hero-section-as-a-static-asset-served-from-frontend-public-assets-generated-with-an-appropriate-overlay-so-it-does-not-overpower-the-text",
-      "title": "Replace the current hero background image with a more professional, subtle, corporate-style background image and wire it into the Hero section as a static asset (served from frontend/public/assets/generated) with an appropriate overlay so it does not overpower the text.",
-      "reqIds": [
-        "REQ-15"
       ],
       "version": 1
     }
@@ -132,57 +26,19 @@
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Create a professional chartered accountant website showcasing services (taxation, GST, accounting, regulatory compliance) and location (Sitapur, Uttar Pradesh).",
+      "summary": "Remove front page background designs/pattern and use no decorative background.",
       "reqIds": [],
       "status": "pending"
     },
     {
-      "id": "AR-8",
-      "summary": "Keep the backend minimal; no custom backend logic is required beyond the default template unless needed for deployment/build correctness.",
-      "reqIds": [
-        "REQ-7"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-9",
-      "summary": "Update the front page color theme: remove green and use a light shade of blue instead (rebuild/redeploy).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "Redesign the front page completely into a simple, formal, professional layout (minimal yet structured) while leaving other pages/sections unchanged.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-11",
-      "summary": "Update the existing Services content displayed on the front page to include expertise in bank audits and concurrent audits (not as a separate section).",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-12",
-      "summary": "Add contact details (phone +91 7607105253 and email cakamalkishoreagarwal@gmail.com) to appear only in the Contact section.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-13",
-      "summary": "Merge Bank Audit and Concurrent Audit into a single service entry within the existing Services section on the front page.",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-14",
-      "summary": "Update the front/intro (hero) page background so it syncs with the overall light-blue theme and looks more professional (adjust gradient/image/background styling as needed).",
+      "id": "AR-2",
+      "summary": "Replace the existing image in the 'About Our Practice' section with the uploaded photo.",
       "reqIds": [],
       "status": "pending"
     }
   ],
   "gameProjectType": "none",
-  "projectName": "Professional chartered accountant website (Sitapur, Uttar Pradesh)",
+  "projectName": "Remove front-page hero background designs and replace About profile image with uploaded photo",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

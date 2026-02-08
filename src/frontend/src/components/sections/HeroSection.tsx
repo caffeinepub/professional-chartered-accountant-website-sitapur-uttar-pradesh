@@ -10,22 +10,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 bg-background">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/assets/generated/ca-hero-bg-professional.dim_1600x900.png"
-          alt="Professional accounting services"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Professional Gradient Overlay - Light Mode */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-background/95 via-background/90 to-background/85 dark:from-background/92 dark:via-background/88 dark:to-background/82" />
-      
-      {/* Subtle Blue Tint Overlay for Brand Consistency */}
-      <div className="absolute inset-0 z-[2] bg-gradient-to-b from-primary/5 via-transparent to-accent/8 dark:from-primary/8 dark:via-transparent dark:to-accent/12" />
-
+    <section id="hero" className="relative min-h-screen flex items-center pt-20">
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">

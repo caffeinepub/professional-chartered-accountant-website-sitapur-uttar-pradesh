@@ -36,7 +36,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-background">
+    <section id="services" className="py-24 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -54,7 +54,7 @@ export default function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow duration-300 border"
+                className="hover:shadow-soft transition-shadow duration-300 border border-border/50 bg-card/50"
               >
                 <CardHeader>
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
